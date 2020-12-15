@@ -2,10 +2,17 @@
 
 {% block body %}
 <div class="container">
+
+    {% if not user.username %}
+
     <div class="desc">
         <b>Memoris</b> - сервис для создания коротких заметок о местах,<br> котрые Вы хотите сохранить в памяти.<br>
 
         <div style="margin-top: 10%; font-size: 1rem">Используйте авторизацию через Facebook, чтобы продолжить</div>
+
+
     </div>
+    {% endif %}
+    <h4 class="text-center"> Welcome {{ user.username }} </h4>
 </div>
 {% endblock %}
