@@ -17,6 +17,18 @@
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
           <h5 class="my-0 mr-md-auto font-weight-normal">Memories</h5>
         {% if user.username %}
+
+
+
+        <div style="margin-right:10px">{{ user.first_name }} {{ user.last_name }}</div>
+          {% for ass in backends.associated %}
+      {% if ass.provider == 'facebook' %}
+
+            <img src="{{ass.extra_data.picture.data.url}}" alt="" width="50" height="50" style="border-radius: 50%; margin-right:10px">
+
+      {% endif %}
+    {% endfor %}
+
         <a class="btn btn-outline-primary" href="{% url 'logout' %}">Выйти</a>
 
         {% else %}

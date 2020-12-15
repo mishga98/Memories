@@ -71,6 +71,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',  # add this
+                'social_django.context_processors.login_redirect',  # add this
             ],
         },
     },
@@ -96,6 +98,14 @@ LOGOUT_REDIRECT_URL = 'home'
 
 SOCIAL_AUTH_FACEBOOK_KEY = '214541916805712'
 SOCIAL_AUTH_FACEBOOK_SECRET = '7a52f2fd6b88d3f141cfa6849d4249c5'
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email', ] # add this
+SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {       # add this
+  'fields': 'id, name, email, picture.type(large), link'
+}
+SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {
+  'locale': 'ru_RU',
+  'fields': 'id, name, email, age_range'
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
