@@ -3,18 +3,17 @@
 {% block body %}
 <div class="container">
 
-    {% if not user.username %}
+    {% if notes %}
+        {% for el in notes %}
+    <div> {{el.title}} </div>
+        {% endfor %}
+    {% else %}
 
-    <div class="desc">
-        <b>Memoris</b> - сервис для создания коротких заметок о местах,<br> котрые Вы хотите сохранить в памяти.<br>
-
-        <div style="margin-top: 10%; font-size: 1rem">Используйте авторизацию через Facebook, чтобы продолжить</div>
-
-
+        Вы еще не добавили ни одного  воспоминания
 
     {% endif %}
 
-    </div>
+
 
 </div>
 {% endblock %}

@@ -92,7 +92,7 @@ DATABASES = {
 }
 
 LOGIN_URL = 'login'
-LOGIN_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'notes'
 LOGOUT_URL = 'logout'
 LOGOUT_REDIRECT_URL = 'home'
 
