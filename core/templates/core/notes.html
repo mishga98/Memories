@@ -26,23 +26,27 @@
         </button>
       </div>
       <div class="modal-body">
-        <form>
+        <form method="post">
+            {% csrf_token %}
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">Название</label>
-            <input type="text" class="form-control" id="recipient-name">
+              {{ form.title }}
           </div>
           <div class="form-group">
             <label for="message-text" class="col-form-label">Описание</label>
-            <textarea class="form-control" id="message-text"></textarea>
+                {{ form.note }}
           </div>
+            {{ form.coordinates }}
+
+            <div id="map" ></div>
+      <div class="modal-footer">
+        <button type="reset" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+        <button type="submit" class="btn btn-primary">Сохранить</button>
+      </div>
         </form>
       </div>
 
-        <div id="map" ></div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
-        <button type="button" class="btn btn-primary">Сохранить</button>
-      </div>
+
     </div>
   </div>
 </div>

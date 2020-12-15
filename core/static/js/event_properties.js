@@ -29,6 +29,11 @@ function init () {
         else {
             myMap.balloon.close();
         }
+        var coords = e.get('coords');
+        document.getElementById('coord_id').value=[
+                    coords[0].toPrecision(6),
+                    coords[1].toPrecision(6)
+                    ].join(', ')
     });
 
     // Обработка события, возникающего при щелчке
