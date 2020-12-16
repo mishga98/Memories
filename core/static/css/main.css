@@ -40,3 +40,7 @@ textarea.form-control {
    top: 0.5em;
 }
 
+.hidden_coord{
+    width:0;
+    overflow: hidden;
+}

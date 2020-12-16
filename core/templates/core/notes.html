@@ -28,8 +28,9 @@
             <label for="message-text" class="col-form-label">Описание</label>
                 {{ form.note }}
           </div>
+            <div style="width:0; overflow:hidden">
             {{ form.coordinates }}
-
+            </div>
             <div id="map" ></div>
       <div class="modal-footer">
         <button type="reset" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>

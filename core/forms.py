@@ -28,7 +28,9 @@ class NoteForm(ModelForm):
                     'type': "text",
                     'class': "form-control",
                     'id': "coord_id",
-                    'style': 'display:none'
+                    'oninvalid':"this.setCustomValidity('Не забудьте указать точку на карте')",
+
+
                 }),
 
         }
