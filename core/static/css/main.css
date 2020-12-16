@@ -9,7 +9,7 @@ html, body {
         height: 100%;
         margin: 0;
         padding: 0;
-        overflow: scroll;
+
 
       }
 
@@ -30,3 +30,13 @@ html, body {
     max-height: 200px;
 
 }
+
+
+textarea.form-control {
+  height: 100px;
+}
+
+.sticky-top {
+   top: 0.5em;
+}
+

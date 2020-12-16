@@ -1,6 +1,6 @@
 ymaps.ready(init);
 var myMap;
-
+var myGeoObject = null;
 function init () {
     myMap = new ymaps.Map("map", {
         center: [56.0071, 92.8601], // Красноярск
@@ -9,6 +9,8 @@ function init () {
         balloonMaxWidth: 200,
         searchControlProvider: 'yandex#search'
     });
+
+
 
     // Обработка события, возникающего при щелчке
     // левой кнопкой мыши в любой точке карты.
@@ -33,8 +35,23 @@ function init () {
         document.getElementById('coord_id').value=[
                     coords[0].toPrecision(6),
                     coords[1].toPrecision(6)
-                    ].join(', ')
+                    ].join(', ');
+
+        if (myGeoObject!=null)  {
+            myGeoObject.geometry.setCoordinates([coords[0], coords[1]])
+            }
+        else {
+            myGeoObject = new ymaps.Placemark([coords[0], coords[1]], {
+                    balloonContent: ''
+                }, {
+                    preset: 'islands#darkGreenDotIcon',
+                    iconCaptionMaxWidth: '50'
+                })
+            myMap.geoObjects.add(myGeoObject);
+        }
     });
+
+
 
     // Обработка события, возникающего при щелчке
     // правой кнопки мыши в любой точке карты.
