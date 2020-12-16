@@ -19,7 +19,7 @@ def notes(request):
             form.save()
             return redirect('notes')
     form = NoteForm()
-    notes = Note.objects.filter(person=request.user)
+    notes = Note.objects.filter(person=request.user).order_by('-id')
     context = {
         'form': form,
         'notes': notes

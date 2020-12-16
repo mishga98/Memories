@@ -44,3 +44,7 @@ textarea.form-control {
     width:0;
     overflow: hidden;
 }
+
+.jumbotron {
+    padding: 0;
+}
